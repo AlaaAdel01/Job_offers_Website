@@ -1,0 +1,29 @@
+﻿@model IEnumerable<JopOffere.Models.Jop>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<div class="panel panel-default" style="padding:15px">
+
+        <div class=" panel-heading"> Search Results </div>
+ 
+        <div class="row">
+
+            @foreach (var subitem in Model)
+            {
+
+
+                <div class="col-md-3 thumbnail"  style="margin-left:20px; margin-bottom:30px; min-height:300px">
+                    <h3>@Html.DisplayFor(modelItem => subitem.JopTitle)</h3>
+                    <h5>@Html.DisplayFor(modelItem => subitem.JopDescription)</h5>
+                    @Html.ActionLink("Details", "Details", new { JobId = subitem.Id }, new { @class = "btn btn-primary" })
+                </div>
+
+            }
+        </div>
+    </div>
+

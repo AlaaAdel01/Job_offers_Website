@@ -1,0 +1,45 @@
+﻿@model JopOffere.Models.Jop
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Jop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JopTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JopDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Apply", "Apply", new { id = Model.Id }, new { @class = "btn btn-success" }) |
+
+
+    @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-default" })
+</p>

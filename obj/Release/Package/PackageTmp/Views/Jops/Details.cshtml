@@ -1,0 +1,44 @@
+﻿@model JopOffere.Models.Jop
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Jop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JopTitle)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopDescription)
+        </dt>
+        <dt>
+            @Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(model => model.JopDescription).ToString()))
+        </dt>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial scale=1" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />>
+</head>
+<body>
+    <!--navbar-->
+    <nav class=" navbar navbar-default navbar-fixed-top">
+        <div class=" container">
+            <div class=" navbar-header">
+                <button class=" navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class=" icon-bar"></span>
+                    <span class=" icon-bar"></span>
+                    <span class=" icon-bar"></span>
+                </button>
+                <a href="~/Home" class=" navbar-brand">
+                    <img src="~/images/OIP (1).jpg" class="logo-size"/>
+                   
+                </a>
+            </div>
+            <div id=" navbar" class=" navbar-collapse collapse">
+                <ul class="nav navbar-nav ">
+                    <li>
+                        <a href="~/Home">
+                            <i class=" glyphicon glyphicon-home"></i>
+                            Home
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/Home/About">
+                            <i class="glyphicon glyphicon-info-sign "></i>
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/Home/About">
+                            <i class="glyphicon glyphicon-envelope "></i>
+                            Contact Us
+                        </a>
+                    </li>
+
+                    <li>
+                        @using (Html.BeginForm("Search","Home",FormMethod.Post))
+                        {
+                            <input type="text" name="searchName" id="searchName"
+                                   placeholder="Search.. "/>
+                        }
+
+                    </li>
+                </ul>
+
+
+             @Html.Partial("_LoginPartial")
+            </div>
+            </div> 
+      
+    </nav>
+
+
+
+    <div class=" container">
+        <div class=" row" style="min-height:550px;">
+        @RenderBody()
+     </div>
+    </div>
+
+
+
+        <!--footer-->
+
+        <footer class=" myfooter">
+            <div class="container" >
+                <div class="row">
+                    <div class=" col-md-4">
+                        <h3>
+                            <i class="glyphicon glyphicon-question-sign"></i>
+                            Who We Are?
+                        </h3>
+                        <p>
+                            wepsite help you to get a jop
+                        </p>
+                    </div>
+
+                    <div class=" col-md-4 ">
+                        <h3>
+                            <i class=" glyphicon glyphicon-globe"></i>
+                            Important Links
+                        </h3>
+                        <ul>
+                            <li><a href=" #">Jops</a></li>
+                            <li><a href=" #">Indoor jops</a></li>
+                            <li><a href=" #"> abroad jops</a></li>
+                            <li><a href=" #">otehr jops</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class=" col-md-4 ">
+                        <h3>
+                            Contact Us
+                        </h3>
+                        <ul>
+                            <li><a href=" #">Facbook Page</a></li>
+                            <li><a href=" #">Twitter</a></li>
+                            <li><a href=" #">Yotupe</a></li>
+                            <li><a href=" #">Leave Us A Message </a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="subfooter ">
+                <span>
+                    2020-
+                    All Rights reserved
+                </span>
+            </div>
+        </footer>
+        <script src="~/Scripts/jquery.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

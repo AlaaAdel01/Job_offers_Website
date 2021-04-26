@@ -1,0 +1,43 @@
+﻿@model  IEnumerable<JopOffere.Models.Category>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron alert alert-info">
+    <h3>Hello Vesitor</h3>
+    <p class="lead">Welcome to our website you can publish a jop if you are publisher or you can apply to jop if you seak for a jop</p>
+</div>
+
+
+
+
+
+@foreach (var item in Model)
+
+{ <div class="panel panel-info">
+
+    <div class=" panel-heading"><h1>@Html.DisplayFor(moedelItem => item.CategoryName)</h1></div>
+    <div class="row panel-body">
+        <h5>@Html.DisplayFor(moedelItem => item.CategoryDescription)</h5>
+
+
+        @foreach (var subitem in item.Jops)
+        {
+
+            <div class="col-md-3 thumbnail" style="margin-left:20px; margin-bottom:30px; min-height:300px">
+                <h3>@Html.DisplayFor(modelItem => subitem.JopTitle)</h3>
+                <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subitem.JopDescription).ToString()))</h5>
+
+                @Html.ActionLink("Details", "Details", new { JobId = subitem.Id }, new { @class = "btn btn-primary" })
+
+
+            </div>
+
+        }
+    </div>
+    </div>
+   }
+
+
+
